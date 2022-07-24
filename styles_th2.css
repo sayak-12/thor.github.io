@@ -1,0 +1,1406 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+SC&family=Alegreya+Sans+SC:wght@300;400&family=Barlow:wght@300&family=Bebas+Neue&family=Cormorant+SC:wght@300;400;500;600;700&family=Goldman:wght@400;700&family=Kanit:wght@500&family=Lato:wght@300;400;700&family=Lobster&family=Poppins:wght@200;300;400;500;600&family=Secular+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Goldman', cursive;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+.preloader {
+    display: fixed;
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 3s;
+    overflow: hidden;
+}
+
+.preloader.complete {
+    opacity: 0;
+    pointer-events: none;
+    overflow: auto;
+}
+
+.loader {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 10rem;
+    height: 10rem;
+    animation: animate1 1s linear infinite;
+
+}
+
+@keyframes animate1 {
+    0% {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    10% {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    50% {
+        width: 15rem;
+        height: 15rem;
+    }
+
+}
+
+.loader span {
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    30% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(90deg);
+    }
+
+    90% {
+        transform: rotate(90deg);
+    }
+
+    100% {
+        transform: rotate(90deg);
+    }
+}
+
+.loader span:nth-child(1) {
+    top: 0;
+    left: 0;
+    background-color: rgba(253, 176, 32, 0.979);
+
+}
+
+.loader span:nth-child(2) {
+    top: 0;
+    right: 0;
+    background-color: rgb(30, 192, 15);
+
+}
+
+.loader span:nth-child(3) {
+    bottom: 0;
+    left: 0;
+    background-color: rgba(57, 25, 199, 0.904);
+
+}
+
+.loader span:nth-child(4) {
+    bottom: 0;
+    right: 0;
+    background-color: rgba(214, 14, 154, 0.918);
+
+}
+
+body {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.13);
+
+    /* background: linear-gradient(60deg, rgba(40, 39, 50, 1) 0%, rgba(87, 59, 63, 1) 13%, rgba(26, 26, 27, 1) 27%, rgba(159, 182, 186, 1) 55%, rgba(107, 79, 85, 1) 73%, rgba(44, 62, 65, 1) 85%, rgba(0, 0, 0, 1) 100%); */
+    justify-content: center;
+    display: flex;
+    background-image: url("thorbg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-blend-mode: lighten;
+    width: 100%;
+    height: 100vh;
+
+}
+
+html {
+    font-size: 62.5%;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    z-index: 2;
+}
+
+ul li {
+    position: relative;
+    top: -30rem;
+    left: -3rem;
+}
+
+ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    position: relative;
+    margin: 1rem;
+    top: 2.5rem;
+    right: -25rem;
+    font-size: 2rem;
+    color: white;
+    transition: 0.5s;
+    text-shadow: 1px 1px 1rem rgb(0, 0, 0);
+}
+
+ul li a:hover {
+    cursor: url("pngwing.com.png"), pointer;
+    color: greenyellow;
+    font-size: 2.2rem;
+
+}
+
+.back {
+    display: flex;
+    /* background-image: url("thorbg.jpg");
+    background-size: cover;
+    background-attachment: fixed; */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    /* position: fixed; */
+    /* background: linear-gradient(45deg, rgba(40,39,50,1) 0%, rgba(87,59,63,1) 13%, rgba(159,182,186,1) 55%, rgba(107,79,85,1) 73%, rgba(44,62,65,1) 85%, rgba(0,0,0,1) 100%); */
+}
+
+.m1 {
+    color: rgb(38, 31, 105);
+    text-shadow: none;
+}
+
+ul li a::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    transform: scaleX(0);
+    bottom: 1px;
+    left: 0;
+    /* transform-origin: bottom right; */
+    background-color: greenyellow;
+    transition: 0.5s;
+}
+
+ul li a:hover::after {
+    width: 100%;
+    transform: scaleX(1);
+    /* transform-origin: bottom left; */
+}
+
+.wait {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    font-size: 4rem;
+    transition: 0.4s;
+    color: white;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.container {
+    height: 30rem;
+    width: 90%;
+    height: 15rem;
+    background: rgba(255, 255, 255, 0.205);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4.5px);
+    -webkit-backdrop-filter: blur(4.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    top: 12rem;
+    backdrop-filter: blur(10px);
+}
+
+.quote {
+    font-family: 'Lobster', cursive;
+    font-size: 2.2rem;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 5rem;
+    transition: all 1s;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 5px rgb(0, 0, 0);
+}
+
+.quote:hover::before {
+    font-size: 5rem;
+    left: -3rem;
+    color: rgb(0, 255, 136);
+}
+
+.quote:hover::after {
+    font-size: 5rem;
+    right: -3rem;
+    color: rgb(0, 255, 136);
+}
+
+.quote::before {
+    content: '“';
+    position: absolute;
+    top: -2rem;
+    left: -2rem;
+    font-size: 3rem;
+    color: white;
+    font-family: 'Secular One', sans-serif;
+    transition: all 1s;
+}
+
+.quote::after {
+    content: '”';
+    position: absolute;
+    top: -2rem;
+    right: -2rem;
+    font-size: 3rem;
+    color: white;
+    font-family: 'Secular One', sans-serif;
+    transition: all 1s;
+}
+
+.tell {
+    position: absolute;
+    top: 9rem;
+    font-size: 2rem;
+    left: 89rem;
+    color: yellow;
+    transition: 0.5s;
+}
+
+.tell:hover {
+    color: rgb(255, 187, 0);
+}.foot{
+    /* background-color: aqua; */
+    height: 10rem;
+    width: 100%;
+    position: absolute;
+    top: 395vh;
+    left: 0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+b{
+    position: relative;
+    text-decoration: none;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    color: rgb(181, 255, 138);
+    letter-spacing: 2.5px;
+    font-size: 2rem;
+    text-shadow: 1px 1px 0px rgb(0, 0, 0),2px 2px 0px rgb(0, 0, 0),3px 3px 0px rgb(0, 0, 0);
+}
+.love{
+    display: flex;
+    position: absolute;
+    text-decoration: none;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-size: 2rem;
+    top: -0.2rem;
+    left: 14.5rem;
+    animation: heart 2s linear infinite;
+}
+@keyframes heart{
+    0%,100%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.3);
+    }
+}
+
+
+.textbox {
+    display: flex;
+    width: 85%;
+    height: 230rem;
+    position: absolute;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    /* background-color: rgba(250, 235, 215, 0.253); */
+    top: 30rem;
+}
+
+.para1,
+.para3,
+.para5,
+.para7 {
+    display: flex;
+    width: 40%;
+    height: 50rem;
+    position: relative;
+    margin: 5rem 5rem 0rem 5rem;
+    left: 0;
+    flex-wrap: wrap;
+    background-color: antiquewhite;
+    border-radius: 3rem;
+    justify-content: center;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.877),
+        3px 3px 20px rgba(0, 0, 0, .5);
+    background-color: rgba(0, 0, 0, 0.6);
+    background-image: url(https://m.media-amazon.com/images/M/MV5BOGE4NzU1YTAtNzA3Mi00ZTA2LTg2YmYtMDJmMThiMjlkYjg2XkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_.jpg);
+    background-size: cover;
+    background-blend-mode: darken;
+    cursor: pointer;
+}
+
+.para2,
+.para4,
+.para6,
+.para8 {
+    display: flex;
+    width: 40%;
+    height: 50rem;
+    position: relative;
+    margin: 5rem 5rem 0rem 5rem;
+    right: 0;
+    flex-wrap: wrap;
+    background-color: antiquewhite;
+    border-radius: 3rem;
+    justify-content: center;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.877),
+        3px 3px 20px rgba(0, 0, 0, .5);
+    background-color: rgba(0, 0, 0, 0.6);
+    background-image: url(https://m.media-amazon.com/images/M/MV5BOGE4NzU1YTAtNzA3Mi00ZTA2LTg2YmYtMDJmMThiMjlkYjg2XkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_.jpg);
+    background-size: cover;
+    background-blend-mode: darken;
+    cursor: pointer;
+}
+
+.para1 {
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.877),
+        3px 3px 20px rgba(0, 0, 0, .5);
+    background-color: rgba(0, 0, 0, 0.6);
+    background-image: url(https://m.media-amazon.com/images/M/MV5BOGE4NzU1YTAtNzA3Mi00ZTA2LTg2YmYtMDJmMThiMjlkYjg2XkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_.jpg);
+    background-size: cover;
+    background-blend-mode: darken;
+}
+
+ion-icon {
+    font-size: 3.2rem;
+    color: white;
+    position: absolute;
+    top: 42rem;
+    left: 45%;
+    display: flex;
+    margin: 10px;
+    transition: 1s;
+}
+
+.eye,
+.ppl,
+.comment {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2rem;
+    color: white;
+    position: absolute;
+    top: 37rem;
+    left: 45%;
+    display: flex;
+    margin: 10px;
+}
+
+.comment {
+    left: 18rem;
+}
+
+.para1 span:nth-child(1) {
+    /* font-family: 'Poppins', sans-serif; */
+    font-size: 4rem;
+    color: white;
+    letter-spacing: 4px;
+    position: absolute;
+    top: 3rem;
+    display: flex;
+    margin: 10px;
+}
+
+.hi {
+    position: absolute;
+    top: 11rem;
+    background-color: rgb(255, 208, 0);
+    display: flex;
+    height: 4px;
+    width: 90px;
+    border-radius: 20px;
+    transition: 1s;
+}
+
+.hi::before {
+    content: 'The powerful but arrogant God Thor is cast out of asgard to live amongst humans in midgard, where he soon becomes one of their finest defenders.';
+    position: absolute;
+    /* background-color: red; */
+    height: 50rem;
+    width: 38rem;
+    top: -10rem;
+    left: -14.5rem;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: 1.2s;
+    color: white;
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+    opacity: 0;
+
+}
+
+.watchbtn,
+.readbtn {
+    position: absolute;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    top: 33rem;
+    background-color: rgb(211, 26, 248);
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    opacity: 0;
+    transition: 1s;
+}
+
+.watchbtn {
+    left: 12rem;
+}
+
+.readbtn {
+    left: 25rem;
+}
+
+.watchbtn:hover,
+.readbtn:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.747);
+    background-color: rgb(46, 43, 226);
+}
+
+.para1:hover .hi::before {
+    z-index: 9;
+    opacity: 1;
+    top: -13rem;
+}
+
+.para1:hover .watchbtn,
+.para1:hover .readbtn {
+    opacity: 1;
+}
+
+.para1 p {
+    position: absolute;
+    top: 13rem;
+    text-align: center;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    margin: 2.2rem;
+    pointer-events: none;
+    transition: 0.4s;
+}
+
+.para1:hover p {
+    opacity: 0;
+}
+
+
+
+
+.eye-outline {
+    left: 10%;
+}
+
+.person-outline {
+    left: 75%;
+}
+
+.eye {
+    left: 10%;
+}
+
+.ppl {
+    left: 72%;
+}
+
+.para2 {
+    background-image: url(https://m.media-amazon.com/images/M/MV5BNDNjZGU1ZjItODFjNy00Y2M1LWFmNWItZmJjNmI3NjMwOTY3XkEyXkFqcGdeQXVyMjMyOTY3NzM@._V1_FMjpg_UX1000_.jpg);
+}
+
+.para2 span:nth-child(1) {
+    /* font-family: 'Poppins', sans-serif; */
+    font-size: 3.3rem;
+    text-align: center;
+    color: white;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 1.5rem;
+    display: flex;
+    margin: 10px;
+}
+
+.para2 p {
+    position: absolute;
+    top: 13rem;
+    text-align: center;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    margin: 2.2rem;
+    pointer-events: none;
+    transition: 0.4s;
+}
+
+.h2 {
+    position: absolute;
+    top: 11rem;
+    background-color: rgb(255, 208, 0);
+    display: flex;
+    height: 4px;
+    width: 90px;
+    border-radius: 20px;
+    transition: 1s;
+}
+
+.h2::before {
+    content: 'When the dark elves attempt to plunge the universe into darkness, Thor must embark on a perilous journey that will reunite him with Jane Foster.';
+    position: absolute;
+    /* background-color: red; */
+    height: 50rem;
+    width: 38rem;
+    top: -10rem;
+    left: -14.5rem;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: 1.2s;
+    color: white;
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+    opacity: 0;
+
+}
+
+.para2:hover p {
+    opacity: 0;
+}
+
+.para2:hover .h2::before {
+    z-index: 9;
+    opacity: 1;
+    top: -13rem;
+}
+
+.para2:hover .watchbtn,
+.para2:hover .readbtn {
+    opacity: 1;
+}
+
+
+
+
+.para3 {
+    background-image: url(https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg);
+}
+
+.para3 span:nth-child(1) {
+    /* font-family: 'Poppins', sans-serif; */
+    font-size: 3.3rem;
+    text-align: center;
+    color: white;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 1.5rem;
+    display: flex;
+    margin: 10px;
+}
+
+.para3 p {
+    position: absolute;
+    top: 13rem;
+    text-align: center;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    margin: 2.2rem;
+    pointer-events: none;
+    transition: 0.4s;
+}
+
+.h3 {
+    position: absolute;
+    top: 11rem;
+    background-color: rgb(255, 208, 0);
+    display: flex;
+    height: 4px;
+    width: 90px;
+    border-radius: 20px;
+    transition: 1s;
+}
+
+.h3::before {
+    content: 'Earths mightiest heroes must come together and learn to fight as a team if they are going to stop the mischievous Loki and his alien army from enslaving humanity.';
+    position: absolute;
+    /* background-color: red; */
+    height: 50rem;
+    width: 38rem;
+    top: -10rem;
+    left: -14.5rem;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: 1.2s;
+    color: white;
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+    opacity: 0;
+
+}
+
+.para3:hover p {
+    opacity: 0;
+}
+
+.para3:hover .h3::before {
+    z-index: 9;
+    opacity: 1;
+    top: -13rem;
+}
+
+.para3:hover .watchbtn,
+.para3:hover .readbtn {
+    opacity: 1;
+}
+
+
+
+.para4 {
+    background-image: url(https://m.media-amazon.com/images/M/MV5BMTM4OGJmNWMtOTM4Ni00NTE3LTg3MDItZmQxYjc4N2JhNmUxXkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_.jpg);
+}
+
+.para4 span:nth-child(1) {
+    /* font-family: 'Poppins', sans-serif; */
+    font-size: 3.3rem;
+    text-align: center;
+    color: white;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 1.5rem;
+    display: flex;
+    margin: 10px;
+}
+
+.para4 p {
+    position: absolute;
+    top: 13rem;
+    text-align: center;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    margin: 2.2rem;
+    pointer-events: none;
+    transition: 0.4s;
+}
+
+.h4 {
+    position: absolute;
+    top: 11rem;
+    background-color: rgb(255, 208, 0);
+    display: flex;
+    height: 4px;
+    width: 90px;
+    border-radius: 20px;
+    transition: 1s;
+}
+
+.h4::before {
+    content: 'When Tony and Bruce try to jump-start a peacekeeping program called Ultron, things go horribly wrong and its upto Earths mightiest heroes to stop Ultron from enacting his horrible plan.';
+    position: absolute;
+    /* background-color: red; */
+    height: 50rem;
+    width: 38rem;
+    top: -10rem;
+    left: -14.5rem;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: 1.2s;
+    color: white;
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+    opacity: 0;
+
+}
+
+.para4:hover p {
+    opacity: 0;
+}
+
+.para4:hover .h4::before {
+    z-index: 9;
+    opacity: 1;
+    top: -13rem;
+}
+
+.para4:hover .watchbtn,
+.para4:hover .readbtn {
+    opacity: 1;
+}
+
+
+
+.para5 {
+    background-image: url(https://m.media-amazon.com/images/M/MV5BMjMyNDkzMzI1OF5BMl5BanBnXkFtZTgwODcxODg5MjI@._V1_.jpg);
+}
+
+.para5 span:nth-child(1) {
+    /* font-family: 'Poppins', sans-serif; */
+    font-size: 3.3rem;
+    text-align: center;
+    color: white;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 1.5rem;
+    display: flex;
+    margin: 10px;
+}
+
+.para5 p {
+    position: absolute;
+    top: 13rem;
+    text-align: center;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    margin: 2.2rem;
+    pointer-events: none;
+    transition: 0.4s;
+}
+
+.h5 {
+    position: absolute;
+    top: 11rem;
+    background-color: rgb(255, 208, 0);
+    display: flex;
+    height: 4px;
+    width: 90px;
+    border-radius: 20px;
+    transition: 1s;
+}
+
+.h5::before {
+    content: 'Imprisoned on the planet Sakaar, Thor must race against time to return to Asgard and stop Ragnarok, the destruction of Asgard, at the hands of powerful and ruthless villain Hela.';
+    position: absolute;
+    /* background-color: red; */
+    height: 50rem;
+    width: 38rem;
+    top: -10rem;
+    left: -14.5rem;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: 1.2s;
+    color: white;
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+    opacity: 0;
+
+}
+
+.para5:hover p {
+    opacity: 0;
+}
+
+.para5:hover .h5::before {
+    z-index: 9;
+    opacity: 1;
+    top: -13rem;
+}
+
+.para5:hover .watchbtn,
+.para5:hover .readbtn {
+    opacity: 1;
+}
+
+
+
+.para6 {
+    background-image: url(https://terrigen-cdn-dev.marvel.com/content/qa/1x/5ae4ca-MLou_13x19_DolbyAtAMC_Handout_v4_online_lg.jpg);
+}
+
+.para6 span:nth-child(1) {
+    /* font-family: 'Poppins', sans-serif; */
+    font-size: 3.3rem;
+    text-align: center;
+    color: white;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 1.5rem;
+    display: flex;
+    margin: 10px;
+}
+
+.para6 p {
+    position: absolute;
+    top: 13rem;
+    text-align: center;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    margin: 2.2rem;
+    pointer-events: none;
+    transition: 0.4s;
+}
+
+.h6 {
+    position: absolute;
+    top: 11rem;
+    background-color: rgb(255, 208, 0);
+    display: flex;
+    height: 4px;
+    width: 90px;
+    border-radius: 20px;
+    transition: 1s;
+}
+
+.h6::before {
+    content: 'The avengers and their allies must be willing to sacrifice all in attempt to defeat the mad titan Thanos before his snap erases half of the universe.';
+    position: absolute;
+    /* background-color: red; */
+    height: 50rem;
+    width: 38rem;
+    top: -10rem;
+    left: -14.5rem;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: 1.2s;
+    color: white;
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+    opacity: 0;
+
+}
+
+.para6:hover p {
+    opacity: 0;
+}
+
+.para6:hover .h6::before {
+    z-index: 9;
+    opacity: 1;
+    top: -13rem;
+}
+
+.para6:hover .watchbtn,
+.para6:hover .readbtn {
+    opacity: 1;
+}
+
+
+
+
+
+
+.para7 {
+    background-image: url(https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_.jpg);
+}
+
+.para7 span:nth-child(1) {
+    /* font-family: 'Poppins', sans-serif; */
+    font-size: 3.3rem;
+    text-align: center;
+    color: white;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 1.5rem;
+    display: flex;
+    margin: 10px;
+}
+
+.para7 p {
+    position: absolute;
+    top: 13rem;
+    text-align: center;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    margin: 2.2rem;
+    pointer-events: none;
+    transition: 0.4s;
+}
+
+.h7 {
+    position: absolute;
+    top: 11rem;
+    background-color: rgb(255, 208, 0);
+    display: flex;
+    height: 4px;
+    width: 90px;
+    border-radius: 20px;
+    transition: 1s;
+}
+
+.h7::before {
+    content: 'After devastating events of Infinity War, the universe is in ruins. With the help of remaining Avengers, our heroes assemble once more to reverse actions of Thanos and restore balance to universe.';
+    position: absolute;
+    /* background-color: red; */
+    height: 50rem;
+    width: 38rem;
+    top: -10rem;
+    left: -14.5rem;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: 1.2s;
+    color: white;
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+    opacity: 0;
+
+}
+
+.para7:hover p {
+    opacity: 0;
+}
+
+.para7:hover .h7::before {
+    z-index: 9;
+    opacity: 1;
+    top: -13rem;
+}
+
+.para7:hover .watchbtn,
+.para7:hover .readbtn {
+    opacity: 1;
+}
+
+
+
+
+.para8 {
+    background-image: url(https://m.media-amazon.com/images/M/MV5BYmMxZWRiMTgtZjM0Ny00NDQxLWIxYWQtZDdlNDNkOTEzYTdlXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg);
+}
+
+.para8 span:nth-child(1) {
+    /* font-family: 'Poppins', sans-serif; */
+    font-size: 3.3rem;
+    text-align: center;
+    color: white;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 1.5rem;
+    display: flex;
+    margin: 10px;
+}
+
+.para8 p {
+    position: absolute;
+    top: 13rem;
+    text-align: center;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    margin: 2.2rem;
+    pointer-events: none;
+    transition: 0.4s;
+}
+
+.h8 {
+    position: absolute;
+    top: 11rem;
+    background-color: rgb(255, 208, 0);
+    display: flex;
+    height: 4px;
+    width: 90px;
+    border-radius: 20px;
+    transition: 1s;
+}
+
+.h8::before {
+    content: 'Thor enlists the help of Valkyrie, Korg and ex-girlfriend Jane Foster to fight Gorr the God Butcher, who intends to make the gods extinct.';
+    position: absolute;
+    /* background-color: red; */
+    height: 50rem;
+    width: 38rem;
+    top: -10rem;
+    left: -14.5rem;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: 1.2s;
+    color: white;
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+    opacity: 0;
+
+}
+
+.para8:hover p {
+    opacity: 0;
+}
+
+.para8:hover .h8::before {
+    z-index: 9;
+    opacity: 1;
+    top: -13rem;
+}
+
+.para8:hover .watchbtn,
+.para8:hover .readbtn {
+    opacity: 1;
+}
+
+
+
+ion-icon:hover {
+    color: aqua;
+}
+
+@media(max-width:1300px) {
+    html {
+        font-size: 60%;
+    }
+}
+
+
+@media(max-width:1240px) {
+    html {
+        font-size: 57%;
+    }
+}
+
+@media(max-width:1190px) {
+    ul li a {
+        right: -20rem;
+    }
+}
+
+@media(max-width:1080px) {
+    ul li a {
+        right: -12rem;
+    }
+}
+
+@media(max-width:1000px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media(max-width:900px) {
+    html {
+        font-size: 55%;
+    }
+
+    ul li a {
+        right: -8rem;
+    }
+}
+
+@media(max-width:840px) {
+    html {
+        font-size: 55%;
+    }
+
+    ul li a {
+        right: -5rem;
+    }
+}
+
+@media(max-width:790px) {
+    html {
+        font-size: 50%;
+    }
+    body{
+        background-position: right top;
+    }
+    ul li a:hover {
+        cursor: pointer;
+        color: greenyellow;
+        font-size: 2rem;
+    }
+
+    ul li a {
+        right: 0rem;
+    }
+
+    ul li {
+        left: 0rem;
+        top: -41rem;
+    }
+
+    .quote {
+        font-size: 1.8rem;
+    }
+
+    .tell {
+        position: absolute;
+        top: 9rem;
+        font-size: 2rem;
+        left: 61rem;
+        color: white;
+        transition: all 0.5s ease 0s;
+    }
+    .para1,
+    .para3,
+    .para5,
+    .para7 {
+        display: flex;
+        width: 65%;
+        height: 50rem;
+        position: relative;
+        margin: 5rem 5rem 0rem 5rem;
+        left: 0;
+        flex-wrap: wrap;
+        background-color: antiquewhite;
+    }
+
+    .para2,
+    .para4,
+    .para6,
+    .para8 {
+        display: flex;
+        width: 65%;
+        height: 50rem;
+        position: relative;
+        margin: 5rem 5rem 0rem 5rem;
+        right: 0;
+        flex-wrap: wrap;
+        background-color: antiquewhite;
+    }
+    .para1,
+    .para3,
+    .para5,
+    .para7,
+    .para2,
+    .para4,
+    .para6,
+    .para8 {
+        box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.877),
+            3px 3px 20px rgba(0, 0, 0, .5);
+        background-color: rgba(0, 0, 0, 0.6);
+        background-image: url(https://m.media-amazon.com/images/M/MV5BOGE4NzU1YTAtNzA3Mi00ZTA2LTg2YmYtMDJmMThiMjlkYjg2XkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_.jpg);
+        background-size: cover;
+        background-blend-mode: darken;
+    }
+
+    .para2 {
+        background-image: url(https://m.media-amazon.com/images/M/MV5BNDNjZGU1ZjItODFjNy00Y2M1LWFmNWItZmJjNmI3NjMwOTY3XkEyXkFqcGdeQXVyMjMyOTY3NzM@._V1_FMjpg_UX1000_.jpg);
+    }
+
+    .para3 {
+        background-image: url(https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg);
+    }
+
+    .para4 {
+        background-image: url(https://m.media-amazon.com/images/M/MV5BMTM4OGJmNWMtOTM4Ni00NTE3LTg3MDItZmQxYjc4N2JhNmUxXkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_.jpg);
+    }
+
+    .para5 {
+        background-image: url(https://m.media-amazon.com/images/M/MV5BMjMyNDkzMzI1OF5BMl5BanBnXkFtZTgwODcxODg5MjI@._V1_.jpg);
+    }
+
+    .para6 {
+        background-image: url(https://terrigen-cdn-dev.marvel.com/content/qa/1x/5ae4ca-MLou_13x19_DolbyAtAMC_Handout_v4_online_lg.jpg);
+    }
+
+    .para7 {
+        background-image: url(https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_.jpg);
+    }
+
+    .para8 {
+        background-image: url(https://m.media-amazon.com/images/M/MV5BYmMxZWRiMTgtZjM0Ny00NDQxLWIxYWQtZDdlNDNkOTEzYTdlXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg);
+    }
+    div[spellcheck="false"]::before{
+        left: -13rem;
+    }
+    .watchbtn{
+        left: 14rem;
+    }
+    .readbtn{
+        left: 28rem;
+    }
+    .comment{
+        left: 20rem;
+    }
+    .foot{
+        top: 537vh;
+    }
+    .love{
+        left: 15.5rem;
+    }
+}
+
+@media(max-width:650px) {
+    html {
+        font-size: 40%;
+    }
+
+}
+
+@media(max-width:510px) {
+    html {
+        font-size: 35%;
+    }
+
+    ul li a:hover {
+        cursor: pointer;
+        color: greenyellow;
+        font-size: 2rem;
+    }
+
+    ul li {
+        left: 0rem;
+        top: -59rem;
+    }
+    body{
+        background-position: 60% top;
+    }
+    .quote {
+        font-size: 1.5rem;
+    }
+
+    .tell {
+        position: absolute;
+        top: 9rem;
+        font-size: 2rem;
+        left: 54rem;
+        color: white;
+        transition: all 0.5s ease 0s;
+    }
+
+    .para1,
+    .para3,
+    .para5,
+    .para7 {
+        display: flex;
+        width: 65%;
+        height: 50rem;
+        position: relative;
+        margin: 5rem 5rem 0rem 5rem;
+        left: 0;
+        flex-wrap: wrap;
+        background-color: antiquewhite;
+    }
+
+    .para2,
+    .para4,
+    .para6,
+    .para8 {
+        display: flex;
+        width: 65%;
+        height: 50rem;
+        position: relative;
+        margin: 5rem 5rem 0rem 5rem;
+        right: 0;
+        flex-wrap: wrap;
+        background-color: antiquewhite;
+    }
+
+    .para1,
+    .para3,
+    .para5,
+    .para7,
+    .para2,
+    .para4,
+    .para6,
+    .para8 {
+        box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.877),
+            3px 3px 20px rgba(0, 0, 0, .5);
+        background-color: rgba(0, 0, 0, 0.6);
+        background-image: url(https://m.media-amazon.com/images/M/MV5BOGE4NzU1YTAtNzA3Mi00ZTA2LTg2YmYtMDJmMThiMjlkYjg2XkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_.jpg);
+        background-size: cover;
+        background-blend-mode: darken;
+    }
+
+    .para2 {
+        background-image: url(https://m.media-amazon.com/images/M/MV5BNDNjZGU1ZjItODFjNy00Y2M1LWFmNWItZmJjNmI3NjMwOTY3XkEyXkFqcGdeQXVyMjMyOTY3NzM@._V1_FMjpg_UX1000_.jpg);
+    }
+
+    .para3 {
+        background-image: url(https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg);
+    }
+
+    .para4 {
+        background-image: url(https://m.media-amazon.com/images/M/MV5BMTM4OGJmNWMtOTM4Ni00NTE3LTg3MDItZmQxYjc4N2JhNmUxXkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_.jpg);
+    }
+
+    .para5 {
+        background-image: url(https://m.media-amazon.com/images/M/MV5BMjMyNDkzMzI1OF5BMl5BanBnXkFtZTgwODcxODg5MjI@._V1_.jpg);
+    }
+
+    .para6 {
+        background-image: url(https://terrigen-cdn-dev.marvel.com/content/qa/1x/5ae4ca-MLou_13x19_DolbyAtAMC_Handout_v4_online_lg.jpg);
+    }
+
+    .para7 {
+        background-image: url(https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_.jpg);
+    }
+
+    .para8 {
+        background-image: url(https://m.media-amazon.com/images/M/MV5BYmMxZWRiMTgtZjM0Ny00NDQxLWIxYWQtZDdlNDNkOTEzYTdlXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg);
+    }
+    .m1{
+        color: rgb(26, 33, 71);
+    }
+    div[spellcheck="false"]::before{
+        left: -11.4rem;
+    }
+    .watchbtn{
+        left: 12rem;
+    }
+    .readbtn{
+        left: 27rem;
+    }
+    .comment{
+        left: 18rem;
+    }
+    .foot{
+        top: 378vh;
+    }
+    .love{
+        left: 17.5rem;
+    }
+}
