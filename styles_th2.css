@@ -125,7 +125,8 @@ html {
     transition: 0.4s;
     color: white;
     text-transform: uppercase;
-    white-space: nowrap;
+    white-space: wrap;
+    text-align: center;
 }
 
 body {
